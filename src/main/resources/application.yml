@@ -1,0 +1,24 @@
+spring:
+  # ˝æ›ø‚…Ë÷√
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_lottery?useUnicode=true&characterEncoding=UTF-8&verifyServerCertificate=false&useSSL=false&requireSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    username: root
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat,slf4j
+    initialSize: 10
+    maxActive: 100
+    maxWait: 60000
+    minIdle: 5
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.chen.mywebflux.db.entity
